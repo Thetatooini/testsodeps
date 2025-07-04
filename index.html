@@ -35,3 +35,46 @@
   </footer>
 </body>
 </html>
+<div>
+  <button onclick="switchLanguage('fr')">Français</button>
+  <button onclick="switchLanguage('en')">English</button>
+  <button onclick="switchLanguage('ar')">العربية</button>
+</div>
+
+<!-- المحتوى بالفرنسية -->
+<div id="content-fr" class="lang-block">
+  <p><strong>SODEPS</strong>, ou Société de Développement et d'Exploitation du Permis du Sud, est une entreprise tunisienne spécialisée...</p>
+  <!-- باقي النص الفرنسي هنا -->
+</div>
+
+<!-- المحتوى بالإنجليزية -->
+<div id="content-en" class="lang-block" style="display: none;">
+  <p><strong>SODEPS</strong>, or the South Permit Development and Operating Company, is a Tunisian company specialized...</p>
+  <!-- باقي النص الإنجليزي هنا -->
+</div>
+
+<!-- المحتوى بالعربية -->
+<div id="content-ar" class="lang-block" style="display: none;" dir="rtl">
+  <p><strong>سوديبس (SODEPS)</strong>، أو شركة تنمية واستغلال رخصة الجنوب، هي شركة تونسية متخصصة...</p>
+  <!-- باقي النص العربي هنا -->
+</div>
+<script>
+  function switchLanguage(lang) {
+    document.querySelectorAll('.lang-block').forEach(div => {
+      div.style.display = 'none';
+    });
+    document.getElementById('content-' + lang).style.display = 'block';
+  }
+</script>
+<style>
+  .lang-block {
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+  button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+</style>
